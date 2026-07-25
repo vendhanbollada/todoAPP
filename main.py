@@ -1,15 +1,12 @@
 import function
 while True:
-    user_input = input("Enter the add show edit  and then the todo name:")
+    user_input = input("Enter the add show edit and then the todo name:")
     user_input = function.wording(user_input)
     todo = user_input[4:]
 
     if "add" in user_input:
         todos = function.file_open()
-
-
         todos.append(todo + "\n")
-
         function.file_write(todos)
 
         print(f"{todo} has been added to your list")
@@ -25,7 +22,7 @@ while True:
             todo = todo.strip("")
             print(f"{index + 1}. {todo}")
         try:
-            user_wants = input("enter whether you want remove replace or compelteld a todo ")
+            user_wants = input("enter whether you want remove replace or compeleted a todo ")
             user_wants = function.wording(user_wants)
             if "remove" or "completle" in user_wants():
                 number = int(input("enter the number of todo you want to remove"))
